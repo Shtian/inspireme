@@ -11,8 +11,8 @@ app.use(async (ctx, next) => {
         response_type: "in_channel", 
         text: url, 
         attachments: [{ image_url: url }], 
-        unfurl_media: true, 
-        unfurl_links: true 
+        unfurl_media: false, 
+        unfurl_links: false
     };
     ctx.set('Content-Type', 'application/json');
     ctx.body = result;
