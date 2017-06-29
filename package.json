@@ -1,0 +1,16 @@
+{
+  "name": "inspireme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Shtian/inspireme.git",
+  "author": "Stian Haga <hagastian@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "node-fetch": "^1.7.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
