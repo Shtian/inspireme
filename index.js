@@ -4,9 +4,18 @@ const app = new Koa();
 const port = process.env.PORT || 3000;
 
 app.use(async (ctx, next) => {
-    var response = await fetch('http://inspirobot.me/api?generate=true');
-    var url = await response.text();
-    ctx.body = url;
+    const response = await fetch('http://inspirobot.me/api?generate=true');
+    const url = await response.text();
+    const result = { 
+        parse: "full", 
+        response_type: "in_channel", 
+        text: url, 
+        attachments: [{ image_url: url }], 
+        unfurl_media: true, 
+        unfurl_links: true 
+    };
+    ctx.set('Content-Type', 'application/json');
+    ctx.body = result;
 });
 
 if (!module.parent) app.listen(port);
