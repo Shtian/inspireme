@@ -18,4 +18,9 @@ app.use(async (ctx, next) => {
     ctx.body = result;
 });
 
+// Keep heroku instance alive
+setInterval(() => {
+    fetch('https://inspirobotnrk.herokuapp.com/');
+}, 299000);
+
 if (!module.parent) app.listen(port);
