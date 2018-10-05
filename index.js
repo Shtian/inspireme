@@ -26,7 +26,7 @@ app.use(async(ctx, next) => {
 
 // Keep heroku instance alive
 setInterval(() => {
-  fetch('https://inspirobotnrk.herokuapp.com/ping');
+  fetch('https://inspirobotnetlight.herokuapp.com/ping');
 }, 299000);
 
 if (!module.parent) app.listen(port);
